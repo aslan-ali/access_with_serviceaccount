@@ -1,0 +1,5 @@
+# access_with_serviceaccount
+
+Firstly create serviceaccount yml file
+after that create clusterrole  with permissions rbac
+and after that binding this serviceaccount to this clusterrolebinding yml file
