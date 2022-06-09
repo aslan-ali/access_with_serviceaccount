@@ -1,0 +1,24 @@
+
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: Devops-binding
+  # namespace: ib-dev
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: devops-role
+subjects:
+  - kind: ServiceAccount
+    name: devops-admin
+    namespace: kubernetes-dashboard
+    
+    
+    #after that we must 
+    
+    #kubectl describe serviceaccount devops-admin
+    #get out this token name
+    #kubectl describe secret {token-name} -n kubernetes-dashboard
+    
+    #and after that push this token to webpage of our dashboard running on POD
